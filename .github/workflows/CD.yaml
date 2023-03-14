@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Display Timestamp
-      run: echo "The current timestamp is $(date +%s)"
+      run: echo "The current timestamp is $(date)"
