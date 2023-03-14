@@ -1,11 +1,9 @@
-- name: Get Time
-  id: time
-  uses: nanzm/get-time-action@v1.1
-  with:
-    timeZone: 8
-    format: 'YYYY-MM-DD-HH-mm-ss'
-- name: Usage
-  env:
-    TIME: "${{ steps.time.outputs.time }}"
-  run: |
-    echo $TIME
+name: Timestamp Action
+on: push
+
+jobs:
+  display-timestamp:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display Timestamp
+      run: echo "The current timestamp is $(date +%s)"
