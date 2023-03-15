@@ -4,7 +4,7 @@ on: push
 jobs:
   display-timestamp:
     env:
-      IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha && $(date +%s)}}"
+      IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}"
     runs-on: ubuntu-latest
     steps:
     - name: Display Timestamp
