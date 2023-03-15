@@ -5,7 +5,7 @@ jobs:
   display-timestamp:
     env:
       IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}$(date +%s)"
-              RE_IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}"$(date +%s)
+      RE_IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}"$(date +%s)
     runs-on: ubuntu-latest
     steps:
     - name: Display Timestamp
