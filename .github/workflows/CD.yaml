@@ -4,11 +4,13 @@ on: push
 jobs:
   display-timestamp:
     env:
-      IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}$((date +%s))"
+      IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}"
     runs-on: ubuntu-latest
     steps:
+    env:
+      RE_IMAGE_TAG: "test-${{ github.ref_type == 'tag' && github.ref_name ||  github.sha}}"$(date +%s)
     - name: Display Timestamp
-      run: echo "The current timestamp is $(date +%s) $IMAGE_TAG$"
+      run: echo "The current timestamp is $(date +%s) $RE_IMAGE_TAG$"
     # - name: Build and tag docker image to Amazon ECR
     #     id: build-docker-image
     #     run: |
